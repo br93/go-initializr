@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
+   <script src="https://unpkg.com/htmx.org@1.9.10"
+      integrity="sha384-D1Kt99CQMDuVetoL1lrYwg5t+9QdHe7NLX/SoJYkXDFfX37iInKRy5xLSi8nO7UC"
+      crossorigin="anonymous"></script>
+   <title>Go Initializr</title>
+   <style>
+      body {
+         font-family: "Inter", sans-serif;
+      }
+
+      .container {
+         min-height: 50vh;
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         justify-content: center;
+         gap: 3rem;
+      }
+
+      .output {
+         width: 50%;
+         padding: 1rem;
+         border-radius: 4px;
+         border: 1px solid #666666;
+         font-family: "Inter", sans-serif;
+         font-size: 1rem;
+         align-items: center;
+         justify-content: center;
+         min-height: 25vh;
+      }
+
+      .title {
+         font-size: 3rem;
+      }
+
+      .module {
+         width: 110%;
+         padding: 1rem;
+         border-radius: 4px;
+         border: 1px solid #666666;
+         font-family: "Inter", sans-serif;
+         font-size: 1rem;
+         align-items: center;
+         justify-content: center;
+
+      }
+
+      .btn {
+         padding: 1rem 2rem;
+         border-radius: 4px;
+         border: none;
+         font-size: 1rem;
+         font-family: "Inter", sans-serif;
+         background-color: #1c1c1c;
+         color: #ffffff;
+         cursor: pointer;
+         align-items: right;
+      }
+   </style>
+</head>
+
+<body>
+   <div class="container">
+      <h1 class="title">Go Initializr</h1>
+      <form hx-post="/modules" hx-target="#output">
+         <input type="text" class="module" name="search"
+            placeholder="Enter all the modules you want to add to your project" required="true">
+         <button class="btn" type="submit">Get</button>
+      </form>
+      <div class="output">
+         <pre id="output"><span></span></pre>
+      </div>
+   </div>
+
+</body>
+
+</html>
