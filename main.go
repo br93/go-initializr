@@ -7,7 +7,6 @@ import (
 	"net/http"
 	"os"
 
-	"go-initializr/common"
 	"go-initializr/service"
 )
 
@@ -28,9 +27,6 @@ func main() {
 		Addr:    fmt.Sprintf(":%s", port),
 		Handler: app.routes(),
 	}
-
-	common.Write()
-	common.Remove()
 
 	log.Printf("Starting modules service on port %s...", port)
 

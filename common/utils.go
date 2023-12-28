@@ -10,17 +10,6 @@ import (
 	"strings"
 )
 
-//go:embed gofind
-var file []byte
-
-func Write() {
-	err := os.WriteFile("gofind", file, 0700)
-
-	if err != nil {
-		log.Panic(fmt.Errorf("could not write file"))
-	}
-}
-
 func Find(arg ...string) []byte {
 	output, err := exec.Command("gofind", arg...).Output()
 
